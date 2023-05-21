@@ -52,12 +52,14 @@ public class MainPageTest {
    @Test
    @DisplayName("Установить язык RU")
    void instalRussianLunguage() {
-
+      $("#mat-select-value-1").click();
+      $("#mat-option-1").click();
+      $(".mat-button-wrapper").shouldHave(text("Нет аккаунта?Зарегистрироваться сейчас!"));
    }
 
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {
-
+      $(".footer").shouldHave(text("Contact us at support@b2broker.net"));
    }
 }

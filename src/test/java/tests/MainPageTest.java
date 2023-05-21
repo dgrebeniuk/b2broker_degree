@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class MainPageTest {
 
@@ -19,7 +19,8 @@ public class MainPageTest {
    @Test
    @DisplayName("Открывается страница регистрации")
    void openRegistrationPage() {
-
+      $(".mat-button-wrapper").click();
+      sleep(5000);
    }
 
    @Test

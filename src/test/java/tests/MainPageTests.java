@@ -1,31 +1,27 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.value;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPageTest {
-
-   @BeforeEach
-   void beforeEach() {
-      Configuration.browserSize = "1440x812";
-      open("https://stand-qa-06-my.b2broker.tech");
-   }
+public class MainPageTests extends TestBase {
 
    @Test
    @DisplayName("Открывается страница регистрации")
    void openRegistrationPage() {
-      $(".mat-button-wrapper").click();
-      $(".registration-type-title").shouldHave(text("Choose Registration Type"));
+      mainPage.openMainPage()
+              .openRegistrationPage();
    }
 
    @Test
    @DisplayName("Отображается QR-code для авторизации")
+
    void displayQrCode() {
-      $(".qr-code-block").shouldHave(text("QR Code Login"));
+      mainPage.openMainPage()
+              .displayQrCode();
    }
 
    @Test
@@ -38,7 +34,10 @@ public class MainPageTest {
    @Test
    @DisplayName("Успешная авторизация")
    void successfulAuthorization() {
-
+      $("#mat-input-0").setValue("ashaparev+1705@b2broker.com");
+      $("#mat-input-1").setValue("123456As");
+      $(".ng-star-inserted > .mat-focus-indicator.mat-flat-button.mat-button-base.mat-accent").click();
+      $(byText("Dashboard")).shouldHave(text("Dashboard"));
    }
 
    @Test

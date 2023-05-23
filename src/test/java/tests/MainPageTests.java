@@ -18,7 +18,6 @@ public class MainPageTests extends TestBase {
 
    @Test
    @DisplayName("Отображается QR-code для авторизации")
-
    void displayQrCode() {
       mainPage.openMainPage()
               .displayQrCode();
@@ -26,9 +25,9 @@ public class MainPageTests extends TestBase {
 
    @Test
    @DisplayName("Открывается страница для восстановления пароля")
-   void openResetPassword() {
-      $(".restore-link").click();
-      $(".ng-star-inserted").shouldHave(text("Restore a password"));
+   void openRestorePassword() {
+      mainPage.openMainPage()
+              .openRestorePage();
    }
 
    @Test

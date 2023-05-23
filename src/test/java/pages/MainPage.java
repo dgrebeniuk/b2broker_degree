@@ -24,4 +24,13 @@ public class MainPage {
 
       return this;
    }
+
+   public MainPage openRestorePage() {
+      $(".restore-link").click();
+      $(".ng-star-inserted").shouldHave(text("Restore a password"));
+
+      return this;
+   }
+
+
 }

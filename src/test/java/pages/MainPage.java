@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class MainPage {
 
    private final SelenideElement
-           buttonRegistration = $(".mat-button-wrapper"),
+           buttonRegistration = $(".mat-button-wrapper > .ng-star-inserted:nth-child(1)"),
            registrationTitle = $(".registration-type-title"),
            codeQR = $(".qr-code-block"),
            restoreLink = $(".restore-link"),

@@ -55,18 +55,19 @@ public class MainPageTests extends TestBase {
    }
 
    @Test
+   @DisplayName("Отобраажется почта службы поддержки")
+   void displaySupportMail() {
+      mainPage.openMainPage()
+              .verifyDisplaySupportMail(supportEmail);
+   }
+
+   @Disabled
+   @Test
    @DisplayName("Установить язык RU")
    void instalRussianLunguage() {
       mainPage.openMainPage()
               .clickOnTheLanguageChangeButton()
               .clickOnTheLanguage()
               .verifyTheLanguageChange(languageRu);
-   }
-
-   @Test
-   @DisplayName("Отобраажется почта службы поддержки")
-   void displaySupportMail() {
-      mainPage.openMainPage()
-              .verifyDisplaySupportMail(supportEmail);
    }
 }

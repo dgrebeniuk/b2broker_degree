@@ -32,5 +32,10 @@ public class MainPage {
       return this;
    }
 
+   public MainPage displaySupportMail() {
+      $(".footer").shouldHave(text("Contact us at support@b2broker.net");
+
+      return this;
+   }
 
 }

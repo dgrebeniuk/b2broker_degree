@@ -58,6 +58,7 @@ public class MainPageTests extends TestBase {
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {
-      $(".footer").shouldHave(text("Contact us at support@b2broker.net"));
+      mainPage.openMainPage()
+              .displaySupportMail();
    }
 }

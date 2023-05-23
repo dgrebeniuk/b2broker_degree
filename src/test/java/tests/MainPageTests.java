@@ -8,21 +8,23 @@ public class MainPageTests extends TestBase {
    @DisplayName("Открывается страница регистрации")
    void openRegistrationPage() {
       mainPage.openMainPage()
-              .openRegistrationPage();
+              .openRegistrationPage()
+              .verifyOpenRegistrationPage("Choose Registration Type");
    }
 
    @Test
    @DisplayName("Отображается QR-code для авторизации")
    void displayQrCode() {
       mainPage.openMainPage()
-              .displayQrCode();
+              .verifyDisplayQrCode("QR Code Login");
    }
 
    @Test
    @DisplayName("Открывается страница для восстановления пароля")
    void openRestorePassword() {
       mainPage.openMainPage()
-              .openRestorePage();
+              .clickOnTheForgotYourPassword()
+              .verifyOpenRestorePage("Restore a password");
    }
 
    @Test

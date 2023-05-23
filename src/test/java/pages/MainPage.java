@@ -16,20 +16,30 @@ public class MainPage {
 
    public MainPage openRegistrationPage() {
       $(".mat-button-wrapper").click();
-      $(".registration-type-title").shouldHave(text("Choose Registration Type"));
 
       return this;
    }
 
-   public MainPage displayQrCode() {
-      $(".qr-code-block").shouldHave(text("QR Code Login"));
+   public MainPage verifyOpenRegistrationPage(String value) {
+      $(".registration-type-title").shouldHave(text(value));
 
       return this;
    }
 
-   public MainPage openRestorePage() {
+   public MainPage verifyDisplayQrCode(String value) {
+      $(".qr-code-block").shouldHave(text(value));
+
+      return this;
+   }
+
+   public MainPage clickOnTheForgotYourPassword() {
       $(".restore-link").click();
-      $(".ng-star-inserted").shouldHave(text("Restore a password"));
+
+      return this;
+   }
+
+   public MainPage verifyOpenRestorePage(String value) {
+      $(".ng-star-inserted").shouldHave(text(value));
 
       return this;
    }

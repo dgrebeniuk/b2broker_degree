@@ -2,11 +2,6 @@ package tests;
 
 import org.junit.jupiter.api.*;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.value;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-
 public class MainPageTests extends TestBase {
 
    @Test
@@ -33,26 +28,29 @@ public class MainPageTests extends TestBase {
    @Test
    @DisplayName("Успешная авторизация")
    void successfulAuthorization() {
-      $("#mat-input-0").setValue("ashaparev+1705@b2broker.com");
-      $("#mat-input-1").setValue("123456As");
-      $(".ng-star-inserted > .mat-focus-indicator.mat-flat-button.mat-button-base.mat-accent").click();
-      $(byText("Dashboard")).shouldHave(text("Dashboard"));
+      mainPage.openMainPage()
+              .setUserEmail("ashaparev+1705@b2broker.com")
+              .setUserPassword("123456As")
+              .clickSignInButton()
+              .verifySignInTR();
    }
 
    @Test
    @DisplayName("Отображение пароля")
    void displayPassword() {
-      $("#mat-input-1").setValue("123456As");
-      $(".toggle-password-button").click();
-      $("#mat-input-1").shouldHave(value("123456As"));
+      mainPage.openMainPage()
+              .setUserPassword("123456As")
+              .clickOnTheShowPasswordButton()
+              .verifyPasswordButton("123456As");
    }
 
    @Test
    @DisplayName("Установить язык RU")
    void instalRussianLunguage() {
-      $("#mat-select-value-1").click();
-      $("#mat-option-1").click();
-      $(".mat-button-wrapper").shouldHave(text("Нет аккаунта?Зарегистрироваться сейчас!"));
+      mainPage.openMainPage()
+              .clickOnTheLanguageChangeButton()
+              .clickOnTheLanguage()
+              .verifyTheLanguageChange("Нет аккаунта?Зарегистрироваться сейчас!");
    }
 
    @Test

@@ -98,8 +98,8 @@ public class MainPage {
       return this;
    }
 
-   public MainPage displaySupportMail() {
-      $(".footer").shouldHave(text("Contact us at support@b2broker.net"));
+   public MainPage verifyDisplaySupportMail(String value) {
+      $(".footer").shouldHave(text(value));
 
       return this;
    }

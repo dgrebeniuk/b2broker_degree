@@ -4,19 +4,27 @@ import org.junit.jupiter.api.*;
 
 public class MainPageTests extends TestBase {
 
+   String registrationPage = "Choose Registration Type",
+           codeQR = "QR Code Login",
+           restorePassword = "Restore a password",
+           userEmail = "ashaparev+1705@b2broker.com",
+           userPassword = "123456As",
+           languageRu = "Нет аккаунта?Зарегистрироваться сейчас!",
+           supportEmail = "Contact us at support@b2broker.net";
+
    @Test
    @DisplayName("Открывается страница регистрации")
    void openRegistrationPage() {
       mainPage.openMainPage()
               .openRegistrationPage()
-              .verifyOpenRegistrationPage("Choose Registration Type");
+              .verifyOpenRegistrationPage(registrationPage);
    }
 
    @Test
    @DisplayName("Отображается QR-code для авторизации")
    void displayQrCode() {
       mainPage.openMainPage()
-              .verifyDisplayQrCode("QR Code Login");
+              .verifyDisplayQrCode(codeQR);
    }
 
    @Test
@@ -24,15 +32,15 @@ public class MainPageTests extends TestBase {
    void openRestorePassword() {
       mainPage.openMainPage()
               .clickOnTheForgotYourPassword()
-              .verifyOpenRestorePage("Restore a password");
+              .verifyOpenRestorePage(restorePassword);
    }
 
    @Test
    @DisplayName("Успешная авторизация")
    void successfulAuthorization() {
       mainPage.openMainPage()
-              .setUserEmail("ashaparev+1705@b2broker.com")
-              .setUserPassword("123456As")
+              .setUserEmail(userEmail)
+              .setUserPassword(userPassword)
               .clickSignInButton()
               .verifySignInTR();
    }
@@ -41,9 +49,9 @@ public class MainPageTests extends TestBase {
    @DisplayName("Отображение пароля")
    void displayPassword() {
       mainPage.openMainPage()
-              .setUserPassword("123456As")
+              .setUserPassword(userPassword)
               .clickOnTheShowPasswordButton()
-              .verifyPasswordButton("123456As");
+              .verifyPasswordButton(userPassword);
    }
 
    @Test
@@ -52,13 +60,13 @@ public class MainPageTests extends TestBase {
       mainPage.openMainPage()
               .clickOnTheLanguageChangeButton()
               .clickOnTheLanguage()
-              .verifyTheLanguageChange("Нет аккаунта?Зарегистрироваться сейчас!");
+              .verifyTheLanguageChange(languageRu);
    }
 
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {
       mainPage.openMainPage()
-              .displaySupportMail();
+              .verifyDisplaySupportMail(supportEmail);
    }
 }

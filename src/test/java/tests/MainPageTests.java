@@ -15,31 +15,27 @@ public class MainPageTests extends TestBase {
    @Test
    @DisplayName("Открывается страница регистрации")
    void openRegistrationPage() {
-      mainPage.openMainPage()
-              .openRegistrationPage()
+         mainPage.openRegistrationPage()
               .verifyOpenRegistrationPage(registrationPage);
    }
 
    @Test
    @DisplayName("Отображается QR-code для авторизации")
    void displayQrCode() {
-      mainPage.openMainPage()
-              .verifyDisplayQrCode(codeQR);
+         mainPage.verifyDisplayQrCode(codeQR);
    }
 
    @Test
    @DisplayName("Открывается страница для восстановления пароля")
    void openRestorePassword() {
-      mainPage.openMainPage()
-              .clickOnTheForgotYourPassword()
+         mainPage.clickOnTheForgotYourPassword()
               .verifyOpenRestorePage(restorePassword);
    }
 
    @Test
    @DisplayName("Успешная авторизация")
    void successfulAuthorization() {
-      mainPage.openMainPage()
-              .setUserEmail(userEmail)
+         mainPage.setUserEmail(userEmail)
               .setUserPassword(userPassword)
               .clickSignInButton()
               .verifySignInTR();
@@ -48,8 +44,7 @@ public class MainPageTests extends TestBase {
    @Test
    @DisplayName("Отображение пароля")
    void displayPassword() {
-      mainPage.openMainPage()
-              .setUserPassword(userPassword)
+         mainPage.setUserPassword(userPassword)
               .clickOnTheShowPasswordButton()
               .verifyPasswordButton(userPassword);
    }
@@ -57,16 +52,13 @@ public class MainPageTests extends TestBase {
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {
-      mainPage.openMainPage()
-              .verifyDisplaySupportMail(supportEmail);
+         mainPage.verifyDisplaySupportMail(supportEmail);
    }
 
-   @Disabled
    @Test
    @DisplayName("Установить язык RU")
    void instalRussianLunguage() {
-      mainPage.openMainPage()
-              .clickOnTheLanguageChangeButton()
+         mainPage.clickOnTheLanguageChangeButton()
               .clickOnTheLanguage()
               .verifyTheLanguageChange(languageRu);
    }

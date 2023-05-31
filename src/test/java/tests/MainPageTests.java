@@ -3,7 +3,7 @@ package tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 
-
+@Tag("simple")
 public class MainPageTests extends TestBase {
 
    String registrationPage = "Choose Registration Type1",
@@ -55,6 +55,7 @@ public class MainPageTests extends TestBase {
               .verifyPasswordButton(userPassword);
    }
 
+   @Disabled("Off mail support")
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {

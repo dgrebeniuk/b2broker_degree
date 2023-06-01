@@ -15,6 +15,7 @@ public class TestBase {
    @BeforeEach
    void beforeEach() {
       Configuration.browserSize = "1440x812";
+      Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
       mainPage.openMainPage();
       Selenide.clearBrowserCookies();
       Selenide.clearBrowserLocalStorage();

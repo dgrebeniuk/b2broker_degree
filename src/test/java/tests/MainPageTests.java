@@ -6,10 +6,10 @@ import org.junit.jupiter.api.*;
 @Tag("simple")
 public class MainPageTests extends TestBase {
 
-   String registrationPage = "Choose Registration Type1",
+   String registrationPage = "Choose Registration Type",
            codeQR = "QR Code Login",
-           restorePassword = "Restore a password1",
-           userEmail = "ashaparev+1705@b2broker.ru",
+           restorePassword = "Restore a password",
+           userEmail = "ashaparev+1705@b2broker.com",
            userPassword = "123456As",
            languageRu = "Нет аккаунта?Зарегистрироваться сейчас!",
            supportEmail = "Contact us at support@b2broker.net";
@@ -54,8 +54,7 @@ public class MainPageTests extends TestBase {
               .clickOnTheShowPasswordButton()
               .verifyPasswordButton(userPassword);
    }
-
-   @Disabled("Off mail support")
+   
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {

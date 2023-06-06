@@ -68,11 +68,4 @@ public class MainPageTests extends TestBase {
               .clickOnTheLanguage()
               .verifyTheLanguageChange(languageRu);
    }
-
-   @Test
-   void properties() {
-      System.setProperties("browser", "chrome");
-      String browser = System.getProperties("browser");
-      System.out.println(browser);
-   }
 }

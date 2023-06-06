@@ -1,17 +1,17 @@
 {
   "base": {
     "logo": "",
-    "project": "",
-    "environment": "",
-    "comment": "",
+    "project": "b2broker",
+    "environment": "qa.b2broker",
+    "comment": "test is ready, @dgrebeniuk",
     "reportLink": "",
     "language": "ru",
-    "allureFolder": "",
-    "enableChart": false
+    "allureFolder": "build/reports/allure-report/allureReport",
+    "enableChart": true
   },
   "telegram": {
-    "token": "",
-    "chat": "",
+    "token": "6148399699:AAGXCWZEzM4_YyIL3zZFO439kLbNXY-VGJE",
+    "chat": "-1001826393349",
     "replyTo": ""
   },
   "slack": {

@@ -13,38 +13,5 @@
     "token": "6148399699:AAGXCWZEzM4_YyIL3zZFO439kLbNXY-VGJE",
     "chat": "-1001826393349",
     "replyTo": ""
-  },
-  "slack": {
-    "token": "",
-    "chat": "",
-    "replyTo": ""
-  },
-  "mattermost": {
-    "url": "",
-    "token": "",
-    "chat": ""
-  },
-  "skype": {
-    "appId": "",
-    "appSecret": "",
-    "serviceUrl": "",
-    "conversationId": "",
-    "botId": "",
-    "botName": ""
-  },
-  "mail": {
-    "host": "",
-    "port": "",
-    "username": "",
-    "password": "",
-    "securityProtocol": null,
-    "from": "",
-    "recipient": ""
-  },
-  "proxy": {
-    "host": "",
-    "port": 0,
-    "username": "",
-    "password": ""
   }
 }

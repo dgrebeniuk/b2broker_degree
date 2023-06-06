@@ -54,7 +54,7 @@ public class MainPageTests extends TestBase {
               .clickOnTheShowPasswordButton()
               .verifyPasswordButton(userPassword);
    }
-   
+
    @Test
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {
@@ -67,5 +67,12 @@ public class MainPageTests extends TestBase {
          mainPage.clickOnTheLanguageChangeButton()
               .clickOnTheLanguage()
               .verifyTheLanguageChange(languageRu);
+   }
+
+   @Test
+   void properties() {
+      System.setProperties("browser", "chrome");
+      String browser = System.getProperties("browser");
+      System.out.println(browser);
    }
 }

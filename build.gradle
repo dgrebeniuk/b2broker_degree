@@ -30,12 +30,17 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.22.1',
             'org.aeonbits.owner:owner:1.0.12',
             'org.junit.jupiter:junit-jupiter:5.9.2',
-            'io.github.bonigarcia:webdrivermanager:5.2.1',
+            'io.github.bonigarcia:webdrivermanager:5.3.3',
             'org.slf4j:slf4j-simple:2.0.6')
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
 
 task web_test(type: Test) {

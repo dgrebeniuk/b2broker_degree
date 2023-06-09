@@ -3,7 +3,8 @@ package tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 
-@Tag("simple")
+
+@Tag("webTest")
 public class MainPageTests extends TestBase {
 
    String registrationPage = "Choose Registration Type",
@@ -15,57 +16,76 @@ public class MainPageTests extends TestBase {
            supportEmail = "Contact us at support@b2broker.net";
 
    @Test
-   @Feature("Feature")
-   @Story("Story")
    @Owner("dgrebeniuk@b2broker.com")
    @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Открывается страница регистрации")
    void openRegistrationPage() {
-         mainPage.openRegistrationPage()
+         mainPage.openMainPage()
+                 .openRegistrationPage()
               .verifyOpenRegistrationPage(registrationPage);
    }
 
    @Test
+   @Owner("dgrebeniuk@b2broker.com")
+   @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Отображается QR-code для авторизации")
    void displayQrCode() {
-         mainPage.verifyDisplayQrCode(codeQR);
+         mainPage.openMainPage()
+                 .verifyDisplayQrCode(codeQR);
    }
 
    @Test
+   @Owner("dgrebeniuk@b2broker.com")
+   @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Открывается страница для восстановления пароля")
    void openRestorePassword() {
-         mainPage.clickOnTheForgotYourPassword()
+         mainPage.openMainPage()
+                 .clickOnTheForgotYourPassword()
                   .verifyOpenRestorePage(restorePassword);
    }
 
    @Test
+   @Owner("dgrebeniuk@b2broker.com")
+   @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Успешная авторизация")
    void successfulAuthorization() {
-         mainPage.setUserEmail(userEmail)
+         mainPage.openMainPage()
+                 .setUserEmail(userEmail)
               .setUserPassword(userPassword)
               .clickSignInButton()
               .verifySignInTR();
    }
 
    @Test
+   @Owner("dgrebeniuk@b2broker.com")
+   @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Отображение пароля")
    void displayPassword() {
-         mainPage.setUserPassword(userPassword)
+         mainPage.openMainPage()
+                 .setUserPassword(userPassword)
               .clickOnTheShowPasswordButton()
               .verifyPasswordButton(userPassword);
    }
 
    @Test
+   @Owner("dgrebeniuk@b2broker.com")
+   @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Отобраажется почта службы поддержки")
    void displaySupportMail() {
-         mainPage.verifyDisplaySupportMail(supportEmail);
+         mainPage.openMainPage()
+                 .verifyDisplaySupportMail(supportEmail);
    }
 
    @Test
+   @Owner("dgrebeniuk@b2broker.com")
+   @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Установить язык RU")
    void instalRussianLunguage() {
-         mainPage.clickOnTheLanguageChangeButton()
+         mainPage.openMainPage()
+                 .clickOnTheLanguageChangeButton()
               .clickOnTheLanguage()
               .verifyTheLanguageChange(languageRu);
    }
+
+
 }

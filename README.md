@@ -78,16 +78,16 @@ web_test
 
 #### Главная страница
 
-<img src="img/screen/scr1.PNG" alt="Allure"/>
+<img src="img/screen/scr1.png" alt="Allure"/>
 
 #### Тесты
 
-<img src="img/screen/scr2.PNG" alt="Allure"/>
+<img src="img/screen/scr2.png" alt="Allure"/>
 
 ### <img width="3%" title="Telegram" src="img/logo/Telegram.svg"> Telegram
 
 Настроена отправка оточета ботом в Telegram
 
-<img src="img/screen/scr3.PNG" alt="Telegram"/>
+<img src="img/screen/scr3.png" alt="Telegram"/>
 
 

@@ -1,5 +1,3 @@
-# b2broker_degree
-
 # Проект автоматизации тестирования для <a target="_blank" href="https://my.b2broker.com/">B2broker</a> 
 
 ## :open_book: Содержание:
@@ -80,16 +78,16 @@ web_test
 
 #### Главная страница
 
-<img src="img/screen/JAllur.PNG" alt="Allure"/>
+<img src="img/screen/scr1.PNG" alt="Allure"/>
 
 #### Тесты
 
-<img src="img/screen/JAllure2.PNG" alt="Allure"/>
+<img src="img/screen/scr2.PNG" alt="Allure"/>
 
 ### <img width="3%" title="Telegram" src="img/logo/Telegram.svg"> Telegram
 
 Настроена отправка оточета ботом в Telegram
 
-<img src="img/screen/JTeleg.PNG" alt="Telegram"/>
+<img src="img/screen/scr3.PNG" alt="Telegram"/>
 
 

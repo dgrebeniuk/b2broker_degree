@@ -40,9 +40,7 @@
 
 Для запуска тестов из Jenkins:
 1. Необходимо нажать кнопку "Собрать с параметрами".
-<img src="img/screen/JUI2.PNG" alt="Jenkins"/>
 2. Выбрать параметры.
-<img src="img/screen/JUI.PNG" alt="Jenkins"/>
 3. Нажать кнопку "Собрать".
 
 ### :earth_asia: Удаленный запуск тестов

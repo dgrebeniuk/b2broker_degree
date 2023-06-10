@@ -16,12 +16,10 @@ public class TestBase {
 
    @BeforeAll
    static void beforeAll() {
-      Configuration.pageLoadStrategy = "eager";
-      Configuration.browserSize = System.getProperty("browserSize", "1440x812");
+      Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
       Configuration.browser = System.getProperty("browser", "chrome");
       Configuration.browserVersion = System.getProperty("browserVersion", "100");
-      Configuration.baseUrl = System.getProperty("baseUrl", "https://stand-qa-06-my.b2broker.tech/");
-      Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+      Configuration.browserSize = System.getProperty("browserSize", "1440x812");
 
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability("enableVNC", true);

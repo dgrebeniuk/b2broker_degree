@@ -22,7 +22,7 @@ public interface WebConfig extends Config {
     String getBrowserSize();
 
     @Key("baseUrl")
-    @DefaultValue("https://stand-qa-06-my.b2broker.tech/")
+    @DefaultValue("https://stand-qa-06-my.b2broker.tech")
     String getBaseUrl();
 
     @Key("isRemote")
@@ -30,7 +30,6 @@ public interface WebConfig extends Config {
     Boolean isRemote();
 
     @Key("remoteUrl")
-   // @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String getRemoteUrl();
 }
 

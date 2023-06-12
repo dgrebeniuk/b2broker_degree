@@ -11,20 +11,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.MainPage;
 
+import java.util.Map;
+
 public class TestBase {
    MainPage mainPage = new MainPage();
 
    @BeforeAll
    static void beforeAll() {
       Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
-      Configuration.baseUrl = System.getProperty("baseUrl", "https://stand-qa-06-my.b2broker.tech/");
+      Configuration.baseUrl = System.getProperty("baseUrl", "https://stand-qa-06-my.b2broker.tech");
       Configuration.browser = System.getProperty("browser", "chrome");
       Configuration.browserVersion = System.getProperty("browserVersion", "100");
       Configuration.browserSize = System.getProperty("browserSize", "1440x812");
 
       DesiredCapabilities capabilities = new DesiredCapabilities();
-      capabilities.setCapability("enableVNC", true);
-      capabilities.setCapability("enableVideo", true);
+      capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+              "enableVNC", true,
+              "enableVideo", true
+      ));
 
       Configuration.browserCapabilities = capabilities;
    }

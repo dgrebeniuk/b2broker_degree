@@ -28,7 +28,7 @@ public class MainPage {
            supportEmail = $(".footer");
 
    public MainPage openMainPage(){
-      open("https://stand-qa-06-my.b2broker.tech/");
+      open("/en/login");
 
       return this;
    }

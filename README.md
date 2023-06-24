@@ -47,7 +47,7 @@
 
 ```bash
 clean
-web_test
+test
 -DbrowserSize="${BROWSER_SIZE}"
 -Dbrowser="${BROWSER}"
 -DbrowserVersion="${BROWSER_VERSION}"

@@ -13,10 +13,8 @@ public class MainPage {
 
    private final SelenideElement
            buttonRegistration = $(".mat-button-wrapper > .ng-star-inserted:nth-child(1)"),
-           registrationTitle = $(".registration-type-title"),
            codeQR = $(".qr-code-block"),
            restoreLink = $(".restore-link"),
-           restorePageTitle = $(".ng-star-inserted"),
            userEmail = $("#mat-input-0"),
            userPassword = $("#mat-input-1"),
            signInButton = $($(".ng-star-inserted > .mat-focus-indicator.mat-flat-button.mat-button-base.mat-accent")),
@@ -40,15 +38,8 @@ public class MainPage {
       return this;
    }
 
-   @Step("Проверяем наличие текста на странице регистрации")
-   public MainPage verifyOpenRegistrationPage(String value) {
-      registrationTitle.shouldHave(text(value));
-
-      return this;
-   }
-
-   @Step("Проверяем отображение QR-code")
-   public MainPage verifyDisplayQrCode(String value) {
+   @Step("Проверяем наличие QR-code для авторизации на главной странице")
+   public MainPage verifyQrCodeOnTheMainPage(String value) {
       codeQR.shouldHave(text(value));
 
       return this;
@@ -57,13 +48,6 @@ public class MainPage {
    @Step("Нажать на кнопку Forgot you password?")
    public MainPage clickOnTheForgotYourPassword() {
       restoreLink.click();
-
-      return this;
-   }
-
-   @Step("Проверяем, что открылалась станица Restore password")
-   public MainPage verifyOpenRestorePage(String value) {
-      restorePageTitle.shouldHave(text(value));
 
       return this;
    }

@@ -10,11 +10,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.MainPage;
+import pages.RegisterPage;
+import pages.RestorePage;
 
 import java.util.Map;
 
 public class TestBase {
    MainPage mainPage = new MainPage();
+   RegisterPage registerPage = new RegisterPage();
+   RestorePage restorePage = new RestorePage();
 
    @BeforeAll
    static void beforeAll() {

@@ -42,8 +42,8 @@ public class MainPageTests extends TestBase {
    @Severity(SeverityLevel.BLOCKER)
    @DisplayName("Установить язык RU")
    void instalRussianLunguage() {
-         mainPage.openMainPage()
-                 .clickOnTheLanguageChangeButton()
+      mainPage.openMainPage()
+              .clickOnTheLanguageChangeButton()
               .clickOnTheLanguage()
               .verifyTheLanguageChange(languageRu);
    }

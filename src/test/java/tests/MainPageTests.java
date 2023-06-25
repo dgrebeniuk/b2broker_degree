@@ -3,7 +3,7 @@ package tests;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.*;
 
-
+@Tag("main")
 @Owner("dgrebeniuk@b2broker.com")
 public class MainPageTests extends TestBase {
 

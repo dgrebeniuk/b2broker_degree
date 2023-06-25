@@ -4,10 +4,12 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("auth")
 @Owner("dgrebeniuk@b2broker.com")
-public class AuthorizationForm extends TestBase{
+public class AuthorizationFormTests extends TestBase {
    String userEmail = "ashaparev+1705@b2broker.com",
            userPassword = "123456As",
            codeQR = "QR Code Login";
